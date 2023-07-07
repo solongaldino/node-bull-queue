@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/solongaldino/node-bull-queue/issues"
   },
-  "homepage": "https://github.com/solongaldino/node-bull-queue#readme"
+  "homepage": "https://github.com/solongaldino/node-bull-queue#readme",
+  "dependencies": {
+    "bull": "^4.10.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
 }
