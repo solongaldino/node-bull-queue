@@ -1,6 +1,6 @@
-import { addJob, processAllQueue } from './domain';
+import { addJob, run } from './domain';
 
 export const Queue = {
     addJob,
-    processAllQueue,
+    run,
 }
