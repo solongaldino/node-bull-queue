@@ -8,10 +8,22 @@ export const allQueues = Object.values(queues).map(queue => ({
 
 export const allJobs = Object.values(jobs);
 
+export function findQueueByName(queueName){
+    return allQueues.find(q => q.bull.name === queueName);
+}
+
+export function findJobByName(jobName){
+    return allJobs.find(job => job.name === jobName);
+}
+
 export function addJob({jobName, queueName, data, options}) {
 
-    let job = allJobs.find(job => job.name === jobName)
-    let queue = allQueues.find(q => q.bull.name === queueName)
-
+    let job = findJobByName(jobName);
+    let queue = findQueueByName(queueName);
+    
     queue.bull.add({ job, queue, payload: data }, options ? options : {});
+}
+
+export function processAllQueue(){
+
 }
